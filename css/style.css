@@ -5,6 +5,16 @@
   src: local('HelveticaNeue-Thin.otf'), url('HelveticaNeue-Thin.otf') format('opentype');
 }
 
+/* Helper Classes */
+.align-right {
+
+}
+
+.align-left {
+  
+}
+/* end Helper Classes */
+
 .container {
   max-width: 1100px;
   width: 100%;
