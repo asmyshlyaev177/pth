@@ -7,11 +7,11 @@
 
 /* Helper Classes */
 .align-right {
-
+  float: right;
 }
 
 .align-left {
-  
+  float: left;
 }
 /* end Helper Classes */
 
