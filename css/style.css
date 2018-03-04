@@ -21,10 +21,37 @@
   margin: 0 auto;
 }
 
-body {
-  font-family: 'HelveticaNeue-Thin';
+* {
+  box-sizing: border-box;
 }
 
-h1 {
-  font-size: 25px;
+#hero {
+  background-image: url('../img/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+h2 {
+  font-size: 52px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.nav li {
+  display: inline-block;
+}
+
+.nav li a {
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-left: 30px;
+  border-bottom: 4px solid white transparent;
+  padding-bottom: 3px;
+}
+
+.nav li a:hover {
+  border-bottom: 4px solid white;
+  transition: border-bottom 0.1s, color 0.1s;
 }
