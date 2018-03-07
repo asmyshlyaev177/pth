@@ -174,19 +174,27 @@ h2 {
 }
 
 #nose .container {
-  padding: 200px 100px 180px 100px;
+  padding: 0;
 }
 
-#nose h2 {
-  max-width: 700px;
+.download-info {
+  width: 75%;
+  padding: 200px 0 140px 100px;
+}
+
+.download-info h2 {
+  padding: 0 0 40px 0;
+  color: white;
 }
 
 .nose-p {
+  font-family: 'HelveticaNeue-Thin';
   font-size: 24px;
+  font-weight: bold;
   line-height: 1.5;
   color: #585858;
-  max-width: 440px;
-  padding: 60px 0 80px 0;
+  max-width: 380px;
+  padding: 40px 0 20px 0;
 }
 
 .download-btn {
@@ -195,6 +203,7 @@ h2 {
   font-weight: 600;
   font-size: 16px;
   padding: 15px 18px;
+  margin: 40px 0 40px 20px;
   background-color: #d9332d;
   color: white;
   text-decoration: none;
@@ -202,6 +211,10 @@ h2 {
 }
 
 .download-btn:hover {
-  color: #383737;
+  background-color: #c33934;
   transition: 0.3s; 
+}
+
+.reddish {
+  color: #f55150;
 }
