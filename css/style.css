@@ -59,7 +59,7 @@ h2 {
 
 .nav li a:hover {
   border-bottom: 4px solid white;
-  transition: border-bottom 0.1s, color 0.1s;
+  transition: border-bottom .1s, color .1s;
 }
 
 #hero h2 {
@@ -115,4 +115,52 @@ h2 {
 .phone-icon {
   vertical-align: middle;
   padding-right: 20px;
+}
+
+/* Features section */
+
+#app-features .container {
+  text-align: center;
+}
+
+#app-features h2 {
+  margin-bottom: 40px;
+  color: #8a8a8a;
+}
+
+#app-features p {
+  color: #8a8a8a;
+}
+
+.p-features {
+  font-family: 'HelveticaNeue-Thin';
+  font-size: 22px;
+  line-height: 28px;
+  padding: 0 100px 50px 100px;
+  color: #545454;
+}
+
+.col-4-app {
+  width: 33.33%;
+  float: left;
+}
+
+.col-4-app p {
+  font-family: 'HelveticaNeue-Thin';
+  font-size: 18px;
+  line-height: 24px;
+  margin: auto;
+  width: 70%;
+}
+
+.row {
+  overflow: hidden;
+}
+
+.row h3 {
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 30px 0;
+  color: #202020;
 }
