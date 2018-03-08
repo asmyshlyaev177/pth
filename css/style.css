@@ -1,14 +1,17 @@
 /* GENERAL */
 
 @font-face {
-  font-family: 'HelveticaNeue-Thin';
-  src: local('HelveticaNeue-Thin.otf'), url('HelveticaNeue-Thin.otf') format('opentype');
+  font-family: "HelveticaNeue-Thin";
+  src: local("HelveticaNeue-Thin.otf"), url("HelveticaNeue-Thin.otf") format("opentype");
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
+
+
 /* Helper Classes */
+
 .align-right {
   float: right;
 }
@@ -16,15 +19,17 @@ body {
 .align-left {
   float: left;
 }
+
+
 /* end Helper Classes */
 
 .container {
-  max-width: 1100px;
-  width: 100%;
   margin: 0 auto;
-  position: relative;
+  max-width: 1100px;
   overflow: hidden;
   padding: 40px 20px;
+  position: relative;
+  width: 100%;
 }
 
 * {
@@ -32,10 +37,10 @@ body {
 }
 
 #hero {
-  background-image: linear-gradient(rgba(218, 51, 46, 0.6), rgba(218, 51, 46, 0.6)), url('../img/hero-bg.jpg');
-  background-size: cover;
-  background-position: center;
   background-attachment: fixed;
+  background-image: linear-gradient( rgba(218, 51, 46, 0.6), rgba(218, 51, 46, 0.6)), url("../img/hero-bg.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
 h2 {
@@ -49,18 +54,21 @@ h2 {
 }
 
 .nav li a {
-  color: white;
-  text-transform: uppercase;
-  text-decoration: none;
-  margin-left: 30px;
   border-bottom: 4px solid white transparent;
+  color: white;
+  margin-left: 30px;
   padding-bottom: 3px;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 .nav li a:hover {
   border-bottom: 4px solid white;
-  transition: border-bottom .1s, color .1s;
+  transition: border-bottom 0.1s, color 0.1s;
 }
+
+
+/* Hero */
 
 #hero h2 {
   color: white;
@@ -80,42 +88,44 @@ h2 {
 }
 
 .iphone {
-  width: 85%;
-  position: relative;
   margin-bottom: 240px;
+  position: relative;
+  width: 85%;
 }
 
 .cta-info {
-  width: 60%;
-  padding-right: 150px;
   float: left;
+  padding-right: 150px;
+  width: 60%;
 }
 
 .hero-paragraph {
+  color: white;
+  font-family: "HelveticaNeue-Thin";
   font-size: 36px;
   line-height: 40px;
-  font-family: 'HelveticaNeue-Thin';
-  color: white;
   margin-bottom: 35px;
 }
 
 .cta-button {
-  padding: 23px 35px;
   background-color: #282828;
-  color: white;
-  text-decoration: none;
   border-radius: 50px;
+  color: white;
+  padding: 23px 35px;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .cta-button:hover {
   color: #383737;
-  transition: 0.3s; 
+  transition: 0.3s;
 }
 
 .phone-icon {
   vertical-align: middle;
   padding-right: 20px;
 }
+
 
 /* Features section */
 
@@ -124,8 +134,8 @@ h2 {
 }
 
 #app-features h2 {
-  margin-bottom: 40px;
   color: #8a8a8a;
+  margin-bottom: 40px;
 }
 
 #app-features p {
@@ -133,20 +143,20 @@ h2 {
 }
 
 .p-features {
-  font-family: 'HelveticaNeue-Thin';
+  color: #545454;
+  font-family: "HelveticaNeue-Thin";
   font-size: 22px;
   line-height: 28px;
   padding: 0 100px 50px 100px;
-  color: #545454;
 }
 
 .col-4-app {
-  width: 33.33%;
   float: left;
+  width: 33.33%;
 }
 
 .col-4-app p {
-  font-family: 'HelveticaNeue-Thin';
+  font-family: "HelveticaNeue-Thin";
   font-size: 18px;
   line-height: 24px;
   margin: auto;
@@ -158,19 +168,20 @@ h2 {
 }
 
 .row h3 {
+  color: #202020;
   font-size: 24px;
-  text-transform: uppercase;
   font-weight: 600;
   margin: 30px 0;
-  color: #202020;
+  text-transform: uppercase;
 }
+
 
 /* Nose section */
 
 #nose {
-  background-image: url('../img/clown-bg.jpg');
-  background-size: cover;
+  background-image: url("../img/clown-bg.jpg");
   background-position: center;
+  background-size: cover;
 }
 
 #nose .container {
@@ -178,43 +189,50 @@ h2 {
 }
 
 .download-info {
-  width: 75%;
   padding: 200px 0 140px 100px;
+  width: 75%;
 }
 
 .download-info h2 {
-  padding: 0 0 40px 0;
   color: white;
+  padding: 0 0 40px 0;
 }
 
 .nose-p {
-  font-family: 'HelveticaNeue-Thin';
+  color: #585858;
+  font-family: "HelveticaNeue-Thin";
   font-size: 24px;
   font-weight: bold;
   line-height: 1.5;
-  color: #585858;
   max-width: 380px;
   padding: 40px 0 20px 0;
 }
 
 .download-btn {
-  display: inline-block;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 16px;
-  padding: 15px 18px;
-  margin: 40px 0 40px 20px;
   background-color: #d9332d;
-  color: white;
-  text-decoration: none;
   border-radius: 50px;
+  color: white;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 40px 0 40px 20px;
+  padding: 15px 18px;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 .download-btn:hover {
   background-color: #c33934;
-  transition: 0.3s; 
+  transition: 0.3s;
 }
 
 .reddish {
   color: #f55150;
+}
+
+
+/* Footer */
+
+footer {
+  background-color: #2e2e38;
 }
