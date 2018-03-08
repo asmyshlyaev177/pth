@@ -1,0 +1,248 @@
+    /* Reset css */
+
+    @import "reset.scss";
+    /* GENERAL */
+
+    $font-helvetica: "HelveticaNeue-Thin";
+    $font-monsterrat: "Montserrat",
+    sans-serif;
+    @font-face {
+        font-family: "HelveticaNeue-Thin";
+        src: local("HelveticaNeue-Thin.otf"), url("HelveticaNeue-Thin.otf") format("opentype");
+    }
+
+    body {
+        font-family: "Montserrat", sans-serif;
+    }
+    /* Helper Classes */
+
+    .align-right {
+        float: right;
+    }
+
+    .align-left {
+        float: left;
+    }
+    /* end Helper Classes */
+
+    .container {
+        margin: 0 auto;
+        max-width: 1100px;
+        overflow: hidden;
+        padding: 40px 20px;
+        position: relative;
+        width: 100%;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    h2 {
+        font-size: 52px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    #hero {
+        background-attachment: fixed;
+        background-image: linear-gradient( rgba(218, 51, 46, 0.6), rgba(218, 51, 46, 0.6)), url("../img/hero-bg.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+
+    .nav {
+        li {
+            display: inline-block;
+            a {
+                border-bottom: 4px solid white transparent;
+                color: white;
+                margin-left: 30px;
+                padding-bottom: 3px;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+            a:hover {
+                border-bottom: 4px solid white;
+                transition: border-bottom 0.1s, color 0.1s;
+            }
+        }
+    }
+    /* Hero */
+
+    #hero {
+        h2 {
+            color: white;
+            margin-bottom: 40px;
+        }
+        .cta {
+            display: inline-block;
+            margin-top: 90px;
+            position: relative;
+            .imgs {
+                float: right;
+                position: absolute;
+                right: -135px;
+                .iphone {
+                    margin-bottom: 240px;
+                    position: relative;
+                    width: 85%;
+                }
+            }
+            .cta-info {
+                float: left;
+                padding-right: 150px;
+                width: 60%;
+                .hero-paragraph {
+                    color: white;
+                    font-family: "HelveticaNeue-Thin";
+                    font-size: 36px;
+                    line-height: 40px;
+                    margin-bottom: 35px;
+                }
+                .cta-button {
+                    background-color: #282828;
+                    border-radius: 50px;
+                    color: white;
+                    padding: 23px 35px;
+                    text-decoration: none;
+                    white-space: nowrap;
+                    .phone-icon {
+                        vertical-align: middle;
+                        padding-right: 20px;
+                    }
+                }
+                .cta-button:hover {
+                    color: #383737;
+                    transition: 0.3s;
+                }
+            }
+        }
+    }
+    /* Features section */
+
+    #app-features .container {
+        text-align: center;
+    }
+
+    #app-features h2 {
+        color: #8a8a8a;
+        margin-bottom: 40px;
+    }
+
+    #app-features p {
+        color: #8a8a8a;
+    }
+
+    .p-features {
+        color: #545454;
+        font-family: "HelveticaNeue-Thin";
+        font-size: 22px;
+        line-height: 28px;
+        padding: 0 100px 50px 100px;
+    }
+
+    .col-4-app {
+        float: left;
+        width: 33.33%;
+    }
+
+    .col-4-app p {
+        font-family: "HelveticaNeue-Thin";
+        font-size: 18px;
+        line-height: 24px;
+        margin: auto;
+        width: 70%;
+    }
+
+    .row {
+        overflow: hidden;
+    }
+
+    .row h3 {
+        color: #202020;
+        font-size: 24px;
+        font-weight: 600;
+        margin: 30px 0;
+        text-transform: uppercase;
+    }
+    /* Nose section */
+
+    #nose {
+        background-image: url("../img/clown-bg.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+
+    #nose .container {
+        padding: 0;
+    }
+
+    .download-info {
+        padding: 200px 0 140px 100px;
+        width: 75%;
+    }
+
+    .download-info h2 {
+        color: white;
+        padding: 0 0 40px 0;
+    }
+
+    .nose-p {
+        color: #585858;
+        font-family: "HelveticaNeue-Thin";
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 1.5;
+        max-width: 380px;
+        padding: 40px 0 20px 0;
+    }
+
+    .download-btn {
+        background-color: #d9332d;
+        border-radius: 50px;
+        color: white;
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 600;
+        margin: 40px 0 40px 20px;
+        padding: 15px 18px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .download-btn:hover {
+        background-color: #c33934;
+        transition: 0.3s;
+    }
+
+    .reddish {
+        color: #f55150;
+    }
+    /* Footer */
+
+    footer {
+        background-color: #2e2e38;
+        color: white;
+    }
+
+    footer .container {
+        padding: 120px 20px;
+    }
+
+    footer h4 {
+        font-size: 20px;
+    }
+
+    footer p {
+        font-family: "HelveticaNeue-Thin";
+    }
+
+    .ul-posts li {
+        font-size: 15px;
+    }
+
+    .col-4-footer {
+        width: 33.33%;
+        float: left;
+    }
