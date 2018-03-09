@@ -492,4 +492,29 @@ $cop-margin: 15px;
             }
         }
     }
+    footer {
+        .reddish-bg {
+            background-size: 40px 100px;
+        }
+    }
+    .copyright {
+        .container {
+            padding: 3% 0 0 0;
+            .cr,
+            .me,
+            .images {
+                margin-bottom: 2%;
+                width: 100%;
+            }
+            .cr,
+            .me {
+                margin-right: $cop-margin;
+                &:after {
+                    content: "";
+                    border: none;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
 }
