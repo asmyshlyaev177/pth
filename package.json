@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "watch": "node-sass -w css/style.scss -o css",
+    "watch2": "gulp watch",
     "build": "gulp build"
   },
   "author": "Asmyshlyaev177@gmail.com",
