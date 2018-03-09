@@ -300,11 +300,12 @@ $cop-margin: 15px;
 .copyright {
     background-color: #d7dedc;
     font-family: $font-monsterrat;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
     text-align: center;
     .container {
         padding: 35px;
+        text-decoration: none;
         .cr,
         .me,
         .images {
@@ -313,7 +314,14 @@ $cop-margin: 15px;
                 margin-right: 25px;
             }
             &:last-child {
-                margin-left: $cop-margin * 2;
+                margin-left: -$cop-margin;
+                a {
+                    margin-left: $cop-margin;
+                }
+            }
+            a {
+                @include link;
+                color: inherit;
             }
         }
         .cr,
@@ -328,3 +336,6 @@ $cop-margin: 15px;
         }
     }
 }
+
+
+/* Media queries */
