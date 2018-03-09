@@ -17,6 +17,9 @@ body {
     font-family: $font-monsterrat;
 }
 
+$sm: 820;
+$md: 1240;
+$lg: 1400;
 
 /* Helper Classes */
 
@@ -339,3 +342,33 @@ $cop-margin: 15px;
 
 
 /* Media queries */
+
+@media screen and (max-width: #{$sm}px) {
+    #hero {
+        .cta {
+            text-align: center;
+            .cta-info {
+                padding-right: 0;
+                width: 100%;
+            }
+            .iphone {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: #{$sm+1}px) and (max-width: #{$md}px) {
+    #hero {
+        .cta {
+            .cta-info {
+                padding-left: 40px;
+                padding-right: 40px;
+                width: 55%;
+            }
+        }
+        .download-info {
+            width: 80%;
+        }
+    }
+}
