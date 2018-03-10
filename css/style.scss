@@ -76,18 +76,20 @@ h2 {
     text-transform: uppercase;
 }
 
-.nav {
-    li {
-        display: inline-block;
-        a {
-            @include link;
-            border-bottom: 4px solid white transparent;
-            margin-left: 30px;
-            padding-bottom: 3px;
-            text-transform: uppercase;
-            &:hover {
-                border-bottom: 4px solid white;
-                transition: border-bottom 0.1s, color 0.1s;
+.navbar {
+    .nav {
+        li {
+            display: inline-block;
+            a {
+                @include link;
+                border-bottom: 4px solid white transparent;
+                margin-left: 30px;
+                padding-bottom: 3px;
+                text-transform: uppercase;
+                &:hover {
+                    border-bottom: 4px solid white;
+                    transition: border-bottom 0.1s, color 0.1s;
+                }
             }
         }
     }
@@ -418,6 +420,46 @@ $cop-margin: 15px;
 }
 
 @media screen and (max-width: #{$sm}px) {
+    .navbar {
+        position: absolute;
+        right: 3%;
+        z-index: 100;
+        .nav {
+            background-color: #282828;
+            border-radius: 5px;
+            height: 0;
+            overflow: hidden;
+            li {
+                display: block;
+                float: none;
+                margin: 0;
+                text-align: right;
+                width: auto;
+                a {
+                    color: white;
+                    display: block;
+                    margin: 0;
+                    padding: 10px;
+                    &:hover {
+                        border: none;
+                    }
+                }
+            }
+        }
+        .open {
+            clear: both;
+            height: auto;
+        }
+        .burger-nav {
+            background: url("../img/hamburger.png") no-repeat 100% center;
+            cursor: pointer;
+            display: block;
+            float: right;
+            height: 33px;
+            margin-bottom: 10px;
+            width: 40px;
+        }
+    }
     #hero {
         .container {
             padding: 5% 3%;
