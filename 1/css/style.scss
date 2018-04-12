@@ -1,0 +1,562 @@
+/* Reset css */
+
+@import "reset.scss";
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600");
+
+/* GENERAL */
+
+$font-helvetica: "HelveticaNeue-Thin";
+$font-monsterrat: "Montserrat",
+sans-serif;
+@font-face {
+    font-family: "HelveticaNeue-Thin";
+    src: local("HelveticaNeue-Thin.otf"), url("HelveticaNeue-Thin.otf") format("opentype");
+}
+
+body {
+    font-family: $font-monsterrat;
+}
+
+$sm: 820;
+$md: 1240;
+$lg: 1400;
+
+/* Helper Classes */
+
+.align-right {
+    float: right;
+}
+
+.align-left {
+    float: left;
+}
+
+.block {
+    display: block;
+}
+
+.inline {
+    display: inline-block;
+}
+
+@mixin link {
+    text-decoration: none;
+    color: white;
+}
+
+@mixin col3 {
+    float: left;
+    width: 33.33%;
+}
+
+@mixin bg {
+    background-position: center;
+    background-size: cover;
+}
+
+
+/* end Helper Classes */
+
+.container {
+    margin: 0 auto;
+    max-width: 1100px;
+    overflow: hidden;
+    padding: 40px 20px;
+    position: relative;
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h2 {
+    font-size: 52px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.navbar {
+    .nav {
+        li {
+            display: inline-block;
+            a {
+                @include link;
+                border-bottom: 4px solid white transparent;
+                margin-left: 30px;
+                padding-bottom: 3px;
+                text-transform: uppercase;
+                &:hover {
+                    border-bottom: 4px solid white;
+                    transition: border-bottom 0.1s, color 0.1s;
+                }
+            }
+        }
+    }
+}
+
+
+/* Hero */
+
+#hero {
+    background-attachment: fixed;
+    background-image: linear-gradient( rgba(218, 51, 46, 0.6), rgba(218, 51, 46, 0.6)), url("../img/hero-bg.jpg");
+    @include bg;
+    h2 {
+        color: white;
+        margin-bottom: 40px;
+    }
+    .cta {
+        display: inline-block;
+        margin-top: 90px;
+        position: relative;
+        .imgs {
+            float: right;
+            position: absolute;
+            right: -135px;
+            .iphone {
+                margin-bottom: 240px;
+                position: relative;
+                width: 85%;
+            }
+        }
+        .cta-info {
+            float: left;
+            padding-right: 150px;
+            width: 60%;
+            .hero-paragraph {
+                color: white;
+                font-family: $font-helvetica;
+                font-size: 36px;
+                line-height: 40px;
+                margin-bottom: 35px;
+            }
+            .cta-button {
+                @include link;
+                background-color: #282828;
+                border-radius: 50px;
+                padding: 23px 35px;
+                white-space: nowrap;
+                .phone-icon {
+                    vertical-align: middle;
+                    padding-right: 20px;
+                }
+                &:hover {
+                    color: #383737;
+                    transition: 0.3s;
+                }
+            }
+        }
+    }
+}
+
+
+/* Features section */
+
+#app-features {
+    p {
+        color: #8a8a8a;
+    }
+    .container {
+        text-align: center;
+        h2 {
+            color: #8a8a8a;
+            margin-bottom: 40px;
+        }
+        .p-features {
+            color: #545454;
+            font-family: $font-helvetica;
+            font-size: 22px;
+            line-height: 28px;
+            padding: 0 100px;
+        }
+        .row {
+            overflow: hidden;
+            h3 {
+                color: #202020;
+                font-size: 24px;
+                font-weight: 600;
+                margin: 30px 0;
+                text-transform: uppercase;
+            }
+            .col-4-app {
+                @include col3;
+                padding-top: 50px;
+                p {
+                    font-family: $font-helvetica;
+                    font-size: 18px;
+                    line-height: 24px;
+                    margin: auto;
+                    width: 70%;
+                }
+            }
+        }
+    }
+}
+
+
+/* Nose section */
+
+#nose {
+    background-image: url("../img/clown-bg.jpg");
+    @include bg;
+    .container {
+        padding: 0;
+        .download-info {
+            padding: 200px 0 140px 100px;
+            width: 75%;
+            h2 {
+                color: white;
+                padding-bottom: 40px;
+                .reddish {
+                    color: #f55150;
+                }
+            }
+            .nose-p {
+                color: #585858;
+                font-family: $font-helvetica;
+                font-size: 24px;
+                font-weight: bold;
+                line-height: 1.5;
+                max-width: 380px;
+                padding: 40px 0 20px 0;
+            }
+            .download-btn {
+                @include link;
+                background-color: #d9332d;
+                border-radius: 50px;
+                display: inline-block;
+                font-size: 16px;
+                font-weight: 600;
+                margin: 40px 0 40px 20px;
+                padding: 15px 18px;
+                text-transform: uppercase;
+                &:hover {
+                    background-color: #c33934;
+                    transition: 0.3s;
+                }
+            }
+        }
+    }
+}
+
+
+/* Footer */
+
+footer {
+    background-color: #2e2e38;
+    color: white;
+    .container {
+        padding: 120px 20px;
+        .col-4-footer {
+            @include col3;
+            margin-top: 77px;
+            padding: 30px;
+            font-size: 15px;
+            line-height: 20px;
+            font-weight: bold;
+            .ul-posts,
+            .ul-tweets,
+            .p-about {
+                margin-top: 30px;
+            }
+            .ul-posts {
+                li {
+                    margin-bottom: 25px;
+                }
+                .reddish-bg {
+                    background: url("../img/Rectangle 16.png") no-repeat;
+                    padding-left: 25%;
+                }
+            }
+            .ul-tweets {
+                li {
+                    list-style: none;
+                    margin-bottom: 25px;
+                }
+                .smalltext {
+                    font-size: 11px;
+                    font-weight: normal;
+                    margin-top: 5px;
+                }
+            }
+            .p-about {
+                font-style: italic;
+                font-weight: normal;
+                margin-top: 25px;
+            }
+        }
+    }
+    h4 {
+        font-size: 20px;
+    }
+    p {
+        font-family: $font-helvetica;
+    }
+}
+
+
+/* Copyright */
+
+.cop-block {
+    vertical-align: middle;
+}
+
+$cop-margin: 15px;
+.copyright {
+    background-color: #d7dedc;
+    font-family: $font-monsterrat;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    .container {
+        padding: 35px;
+        text-decoration: none;
+        .cr,
+        .me,
+        .images {
+            @extend .cop-block;
+            .sn-icon:not(:last-child) {
+                margin-right: 25px;
+            }
+            &:last-child {
+                margin-left: -$cop-margin;
+                a {
+                    margin-left: $cop-margin;
+                }
+            }
+            a {
+                @include link;
+                color: inherit;
+            }
+        }
+        .cr,
+        .me {
+            margin-right: $cop-margin;
+            &:after {
+                content: "";
+                border: 0px solid #555555;
+                margin-left: $cop-margin;
+                box-shadow: 0px 0px 1px 1px black;
+            }
+        }
+    }
+}
+
+
+/* Media queries */
+
+@media screen and (max-width: #{$md}px) {
+    #hero {
+        .cta {
+            .cta-info {
+                padding-left: 40px;
+                padding-right: 40px;
+                width: 55%;
+            }
+        }
+    }
+    #app-features {
+        .container {
+            .p-features {
+                padding: 0 30px;
+            }
+            .row {
+                .col-4-app {
+                    width: 100%;
+                    float: none;
+                }
+            }
+        }
+    }
+    #nose {
+        .container {
+            .download-info {
+                padding: 100px 15%;
+                width: 80%;
+                h2 {
+                    padding-bottom: 20px;
+                }
+                .nose-p {
+                    max-width: 60%;
+                }
+            }
+        }
+    }
+    footer {
+        .container {
+            padding: 5% 3%;
+            .logo-footer {
+                text-align: center;
+                margin-bottom: 3%;
+            }
+            .col-4-footer {
+                float: none;
+                margin-top: 0;
+                padding: 3% 2% 5% 2%;
+                text-align: center;
+                width: 100%;
+                .ul-posts,
+                .ul-tweets,
+                .about {
+                    width: 80%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                .ul-posts {
+                    .reddish-bg {
+                        padding-left: 0;
+                        .block {
+                            margin-right: 0;
+                        }
+                    }
+                    li {
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: #{$sm}px) {
+    .navbar {
+        position: absolute;
+        right: 3%;
+        z-index: 100;
+        .nav {
+            background-color: #282828;
+            border-radius: 5px;
+            height: 0;
+            overflow: hidden;
+            li {
+                display: block;
+                float: none;
+                margin: 0;
+                text-align: right;
+                width: auto;
+                a {
+                    color: white;
+                    display: block;
+                    margin: 0;
+                    padding: 10px;
+                    &:hover {
+                        border: none;
+                    }
+                }
+            }
+        }
+        .open {
+            clear: both;
+            height: auto;
+        }
+        .burger-nav {
+            background: url("../img/hamburger.png") no-repeat 100% center;
+            cursor: pointer;
+            display: block;
+            float: right;
+            height: 33px;
+            margin-bottom: 10px;
+            width: 40px;
+        }
+    }
+    #hero {
+        .container {
+            padding: 5% 3%;
+        }
+        .cta {
+            margin-top: 5%;
+            text-align: center;
+            .cta-info {
+                padding-left: 0;
+                padding-right: 0;
+                margin-bottom: 3%;
+                width: 100%;
+                h2 {
+                    font-size: 230%;
+                    margin-bottom: 5%;
+                }
+                .hero-paragraph {
+                    font-size: 160%;
+                    margin-bottom: 50px;
+                }
+                .cta-button {
+                    font-size: 110%;
+                    padding: 4% 6%;
+                }
+            }
+            .imgs {
+                .iphone {
+                    display: none;
+                }
+            }
+        }
+    }
+    #app-features {
+        .container {
+            padding: 12% 3%;
+            h2 {
+                margin-bottom: 4%;
+            }
+            .row {
+                .col-4-app {
+                    p {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    #nose {
+        background-image: none;
+        background-position: left;
+        background-size: auto;
+        background: #d7dedc;
+        .container {
+            text-align: center;
+            .download-info {
+                padding: 12% 5%;
+                width: 100%;
+                h2 {
+                    font-size: 220%;
+                    padding-bottom: 4%;
+                    padding-top: 5%;
+                }
+                .nose-p {
+                    margin-left: auto;
+                    margin-right: auto;
+                    max-width: 90%;
+                    padding: 4% 0;
+                }
+                .download-btn {
+                    margin: 10px auto 0 auto;
+                }
+            }
+        }
+    }
+    footer {
+        .reddish-bg {
+            background-size: 40px 100px;
+        }
+    }
+    .copyright {
+        .container {
+            padding: 3% 0 0 0;
+            .cr,
+            .me,
+            .images {
+                margin-bottom: 2%;
+                width: 100%;
+            }
+            .cr,
+            .me {
+                margin-right: $cop-margin;
+                &:after {
+                    content: "";
+                    border: none;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}

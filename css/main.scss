@@ -1,0 +1,113 @@
+@import "normalize.css";
+    
+$xs: 400px;
+
+@mixin inline-va {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.sidenav {
+    background-color: white;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    left: -100%;
+    visibility: hidden;
+    &.active {
+        left: 0;
+        visibility: visible;
+    }
+    a {
+        color: #717070;
+        display: block;
+        font-size: 15px;
+        letter-spacing: 1px;
+        font-family: sans-serif;
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: 0.3s;
+    }
+    a:hover {
+        color: #f1f1f1;
+    }
+    .closebtn {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+}
+
+.header-container {
+    position: relative;
+    width: 100%;
+    
+    @media screen and (min-width: $xs) {
+        text-align: center;
+    }
+
+    .header-text {
+        @include inline-va;
+        margin: 10% 0 10% 10%;
+        max-width: 60%;
+        text-transform: uppercase;
+        
+        img {
+            @include inline-va;
+        }
+        div {
+            @include inline-va;
+            max-width: 75%;
+            @media screen and (min-width: $xs) {
+                max-width: 100%;
+            }
+        }
+    }
+    
+    .menu-wrapper {
+        @include inline-va;
+        float: right;
+        margin: 8% 5%; 
+        width: 10%;
+        .menu-icon {
+            border: black 1px solid;
+            border-radius: 5px;
+            display: inline-block;
+            float: right;
+            
+            .wrapper {
+                padding: 10px 14px;
+                .bar1, .bar2, .bar3 {
+                    width: 23px;
+                    height: 4px;
+                    background-color: #333;
+                    margin: 5px 0;
+                    transition: 0.4s;
+                }
+                &.active {
+                    .bar1 {
+                        transform: rotate(-45deg) translate(-5px, 6px);
+                    }
+                    .bar2 {
+                        opacity: 0;
+                    }
+                    .bar3 {
+                        transform: rotate(45deg) translate(-6px, -8px);
+                    }
+                }
+                
+            }
+
+        }
+    }
+        
+}
