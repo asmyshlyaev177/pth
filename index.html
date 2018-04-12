@@ -1,104 +1,77 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>title</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <link rel="apple-touch-icon" href="icon.png">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>title</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="stylesheet" href="css/main.css"> </head>
 
-        <link rel="stylesheet" href="css/main.css">
-    </head>
-    <body>
-        <!--[if lte IE 9]>
+<body>
+    <!--[if lte IE 9]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
-
-        <!-- Add your site or application content here -->
-        
-        <nav id="mySidenav" class="sidenav">
-          <a href="#">Home</a>
-          <a href="#">Practice Areas</a>
-          <a href="#">Our Vision</a>
-          <a href="#">Contact</a>
-        </nav>
-
-        <header>
-            <div class="header-container">
-                <div class="header-text">
-                    <img src="img/logo.png">
-                    <div>Knoll & walters llp</div>
-                </div>
-                <div class="desktop-menu">
-                    <ul class="menu">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Practice Areas</a></li>
-                        <li><a href="#">Our Vision</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="menu-wrapper">
-                    <div class="menu-icon">
-                        <div class="wrapper" onClick="toggleMenu(this)">
-                            <div class="bar1"></div>
-                            <div class="bar2"></div>
-                            <div class="bar3"></div>
-                        </div>
+    <!-- Add your site or application content here -->
+    <nav id="mySidenav" class="sidenav"> <a href="#">Home</a> <a href="#">Practice Areas</a> <a href="#">Our Vision</a> <a href="#">Contact</a> </nav>
+    <header>
+        <div class="header-container">
+            <div class="header-text"> <img src="img/logo.png">
+                <div>Knoll & walters llp</div>
+            </div>
+            <div class="desktop-menu">
+                <ul class="menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Practice Areas</a></li>
+                    <li><a href="#">Our Vision</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="menu-wrapper">
+                <div class="menu-icon">
+                    <div class="wrapper" onClick="toggleMenu(this)">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
                     </div>
                 </div>
-                
             </div>
-            
-        </header>
-        
-        <section id="hero1">
-            <div class="container">
-                <div class="shadow">
-                    <div class="wrapper">
-                        <div class="hero-title">
-                            <span class="bold block">BOUTIQUE</span>
-                            <span class="block">LAW FIRM</span>
-                        </div>
-                        <div class="hero-description">
-                            Specializing in Commercial Law & Litigation, Insolvency & Fraud
-                        </div>
-                    </div>
-
+        </div>
+    </header>
+    <section id="hero1">
+        <div class="container">
+            <div class="shadow">
+                <div class="wrapper">
+                    <div class="hero-title"> <span class="bold block">BOUTIQUE</span> <span class="block">LAW FIRM</span> </div>
+                    <div class="hero-description"> Specializing in Commercial Law & Litigation, Insolvency & Fraud </div>
                 </div>
-                
             </div>
-        </section>
-        
-        
-        <section>
-        </section>
-        <section>
-        </section>
-        <section>
-        </section>
-        <section>
-        </section>
-        
-        <footer>
-        </footer>
-        
-        <script>
-            function toggleMenu(menu) {
-                let menuStatus = document.querySelector(".menu-icon .wrapper").classList.contains('active')
-                menuStatus ? closeMenu() : openMenu()
-            }
-            function openMenu() {
-                document.getElementById("mySidenav").classList.add('active');
-                document.querySelector(".menu-icon .wrapper").classList.add('active')
-            }
-            function closeMenu() {
-                document.getElementById("mySidenav").classList.remove('active');
-                document.querySelector(".menu-icon .wrapper").classList.remove('active')
-            }
-        </script>
-        
-        <!-- <script src="js/main.js"></script> -->
-    </body>
+        </div>
+    </section>
+    <section> </section>
+    <section> </section>
+    <section> </section>
+    <section> </section>
+    <footer> </footer>
+    <script>
+        function toggleMenu(menu) {
+            let menuStatus = document.querySelector(".menu-icon .wrapper").classList.contains('active')
+            menuStatus ? closeMenu() : openMenu()
+        }
+
+        function openMenu() {
+            document.getElementById("mySidenav").classList.add('active');
+            document.querySelector(".menu-icon .wrapper").classList.add('active')
+        }
+
+        function closeMenu() {
+            document.getElementById("mySidenav").classList.remove('active');
+            document.querySelector(".menu-icon .wrapper").classList.remove('active')
+        }
+    </script>
+    <!-- <script src="js/main.js"></script> -->
+</body>
+
 </html>
