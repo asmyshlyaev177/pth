@@ -1,6 +1,7 @@
 @import "normalize.css";
     
 $xs: 400px;
+$sm: 680px;
 
 @mixin inline-va {
     display: inline-block;
@@ -64,16 +65,46 @@ body {
 }
 
 .header-container {
+    display: flex;
+    justify-content: space-between;
     position: relative;
     width: 100%;
-    
-    @media screen and (min-width: $xs) {
-        text-align: center;
-    }
 
+    .desktop-menu {
+        display: none;
+        vertical-align: middle;
+        align-self: center;
+        margin-right: 15px;
+        
+        @media screen and (min-width: $sm) {
+            display: inline-block;;
+        }
+        
+        ul.menu {
+            display: flex;
+            li {
+                cursor: pointer;
+                margin: 0 10px;
+                display: inline-block;
+                white-space: nowrap;
+                a {
+                    color: rgba(15, 76, 133, 1);
+                    font-size: 13px;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    &:hover {
+                        color: rgba(12, 97, 177, 0.71);
+                        transition: color 0.2s;
+                    }
+                }
+                
+            }
+        }
+    }
+    
     .header-text {
         @include inline-va;
-        margin: 30px 0 30px 30px;
+        margin: 20px 0 20px 15px;
         max-width: 60%;
         text-transform: uppercase;
         
@@ -90,10 +121,12 @@ body {
     }
     
     .menu-wrapper {
-        @include inline-va;
-        float: right;
-        margin: 20px; 
+        align-self: center;
+        margin: 10px 15px 10px 0;
         width: 10%;
+        @media screen and (min-width: $sm) {
+            display: none;
+        }
         .menu-icon {
             border: black 1px solid;
             border-radius: 5px;
@@ -129,7 +162,7 @@ body {
 
 #hero1 {
     .container {
-        background-image: url('/img/hero1img.webp');
+        background-image: url('../img/hero1img.webp');
         height: 400px;
         background-position: center;
         background-size: cover;
@@ -139,24 +172,50 @@ body {
         .shadow {
             background-color: rgba(0, 48, 91, 0.65);
             color: white;
-            display: block;
             width: 95%;
             height: 65%;
-            float: right;
             top: 18%;
+            float: right;
             position: relative;
+            display: flex;
+            justify-content: center;
+            align-content: center;
             
-            .hero-title {
-                font-size: 2.4em;
-                margin-top: 50px;
-                margin-left: 7%;
+            @media screen and (min-width: $xs) {
+                align-items: center;
             }
-            .hero-description {
-                font-size: 18px;
-                margin-top: 5%;
-                margin-left: 7%;
-                width: 80%;
+            
+            @media screen and (min-width: $sm) {
+                float: left;
+                height: 100%;
+                top: 0;
+                width: 37%;
+                justify-content: center;
             }
+            
+            .wrapper {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                .hero-title {
+                    font-size: 2.4em;
+                    margin: 0 0 30px 30px;
+
+                    @media screen and(min-width: $xs) {
+                        align-self: left;
+                    }
+                }
+                .hero-description {
+                    font-size: 18px;
+                    margin: 0 10px 0 30px;
+                    max-width: 320px;
+
+                    @media screen and(min-width: $xs) {
+                        align-self: left;
+                    }
+                } 
+            }
+
         }
     }
     
