@@ -152,6 +152,7 @@ body {
 
 #hero1 {
     .container {
+        background-attachment: fixed;
         background-image: url('../img/hero1img.webp');
         height: 400px;
         background-position: center;
@@ -167,7 +168,7 @@ body {
             float: right;
             position: relative;
             display: flex;
-            justify-content: center;
+            justify-content: left;
             align-content: center;
             @media screen and (min-width: $xs) {
                 align-items: center;
@@ -183,20 +184,77 @@ body {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                margin-left: 5%;
                 .hero-title {
                     font-size: 2.4em;
-                    margin: 0 0 30px 30px;
+                    margin: 0 0 30px 0;
                     @media screen and(min-width: $xs) {
                         align-self: left;
                     }
                 }
                 .hero-description {
                     font-size: 18px;
-                    margin: 0 10px 0 30px;
+                    margin: 0 10px 0 0;
                     max-width: 320px;
                     @media screen and(min-width: $xs) {
                         align-self: left;
                     }
+                }
+            }
+        }
+    }
+}
+
+#practice {
+    .container {
+        color: #00305B;
+        display: flex;
+        flex-direction: column;
+        .heading {
+            background-color: rgba(234, 244, 246, 1);
+            padding: 40px 0;
+            font-size: 22px;
+            text-transform: uppercase;
+            h2 {
+                margin: 0 10%;
+                &:last-child {
+                    font-weight: 400;
+                }    
+            }
+        }
+        .list {
+            display: flex;
+            flex-direction: column;
+            @media screen and (min-width: $sm) {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            .list-item {
+                display: flex;
+                align-items: baseline;
+                justify-content: flex-start;
+                margin: 1em 3% 1em 10%;
+                .bullet-wrapper {
+                    margin-right: 15px;
+                }
+                .bullet {
+                    background-color: rgb(65, 183, 196);
+                    display: inline-block;
+                    height: 10px;
+                    width: 10px;
+                }
+                h3 {
+                    display: inline-block;
+                    margin-bottom: 20px;
+                }
+                @media screen and (min-width: $xs) {
+                    max-width: 310px;
+                }
+                @media screen and (min-width: $sm) {
+                    margin: 1em 2% 1em 2%;
+                    max-width: 40%;
+                    width: 40%;
                 }
             }
         }
