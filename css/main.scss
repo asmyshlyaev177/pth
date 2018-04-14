@@ -1,6 +1,9 @@
 @import "normalize.css";
 $xs: 400px;
 $sm: 680px;
+$md: 860px;
+$lg: 1100px;
+$xl: 1300px;
 @mixin inline-va {
     display: inline-block;
     vertical-align: middle;
@@ -150,6 +153,7 @@ body {
     }
 }
 
+$leftBlockWidth: 37%;
 #hero1 {
     .container {
         background-attachment: fixed;
@@ -177,7 +181,7 @@ body {
                 float: left;
                 height: 100%;
                 top: 0;
-                width: 37%;
+                width: $leftBlockWidth;
                 justify-content: center;
             }
             .wrapper {
@@ -210,11 +214,17 @@ body {
         color: #00305B;
         display: flex;
         flex-direction: column;
+        @media screen and (min-width: $sm) {
+            flex-direction: row;
+        }
         .heading {
             background-color: rgba(234, 244, 246, 1);
             padding: 40px 0;
             font-size: 22px;
             text-transform: uppercase;
+            @media screen and (min-width: $sm) {
+                flex-basis: $leftBlockWidth;
+            }
             h2 {
                 margin: 0 10%;
                 &:last-child {
@@ -226,6 +236,7 @@ body {
             display: flex;
             flex-direction: column;
             @media screen and (min-width: $sm) {
+                flex-basis: 60%;
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: space-around;
