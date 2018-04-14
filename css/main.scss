@@ -154,6 +154,32 @@ body {
 }
 
 $leftBlockWidth: 37%;
+$leftContentWidth: 320px;
+$titleFontSize: 2.4em;
+
+@mixin leftBlock {
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-content: center;
+    @media screen and (min-width: $xs) {
+        align-items: center;
+    }
+    @media screen and (min-width: $sm) {
+        float: left;
+        top: 0;
+        width: $leftBlockWidth;
+        justify-content: center;
+    }
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 5%;
+        width: $leftContentWidth;
+    }
+}
+
 #hero1 {
     .container {
         background-attachment: fixed;
@@ -163,46 +189,28 @@ $leftBlockWidth: 37%;
         background-size: cover;
         padding-top: 1px;
         margin-top: 1px;
+        @media screen and (min-width: $md) {
+            height: 850px;
+        }
         .shadow {
+            @include leftBlock;
+            @media screen and (min-width: $sm) {
+                height: 100%;
+            }
             background-color: rgba(0, 48, 91, 0.65);
             color: white;
             width: 95%;
             height: 65%;
             top: 18%;
             float: right;
-            position: relative;
-            display: flex;
-            justify-content: left;
-            align-content: center;
-            @media screen and (min-width: $xs) {
-                align-items: center;
-            }
-            @media screen and (min-width: $sm) {
-                float: left;
-                height: 100%;
-                top: 0;
-                width: $leftBlockWidth;
-                justify-content: center;
-            }
             .wrapper {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                margin-left: 5%;
                 .hero-title {
-                    font-size: 2.4em;
+                    font-size: $titleFontSize;
                     margin: 0 0 30px 0;
-                    @media screen and(min-width: $xs) {
-                        align-self: left;
-                    }
                 }
                 .hero-description {
                     font-size: 18px;
                     margin: 0 10px 0 0;
-                    max-width: 320px;
-                    @media screen and(min-width: $xs) {
-                        align-self: left;
-                    }
                 }
             }
         }
@@ -217,19 +225,30 @@ $leftBlockWidth: 37%;
         @media screen and (min-width: $sm) {
             flex-direction: row;
         }
+        
         .heading {
+            @include leftBlock;
             background-color: rgba(234, 244, 246, 1);
             padding: 40px 0;
-            font-size: 22px;
             text-transform: uppercase;
             @media screen and (min-width: $sm) {
-                flex-basis: $leftBlockWidth;
+                width: $leftBlockWidth;
+                justify-content: center;
             }
-            h2 {
-                margin: 0 10%;
-                &:last-child {
-                    font-weight: 400;
-                }    
+            .wrapper {
+                height: 150px;
+                margin-left: 10%;
+                @media screen and (min-width: $sm) {
+                    margin-left: 5%;
+                }
+                span {
+                    font-size: $titleFontSize;
+                    display: inline-block;
+                    margin: 0;
+                    &:last-child {
+                        font-weight: 400;
+                    }    
+                }
             }
         }
         .list {
