@@ -25,6 +25,14 @@ body {
     display: block;
 }
 
+$leftBlockWidth: 37%;
+$leftContentWidth: 320px;
+$titleFontSize: 2.4em;
+
+*[class$="-title"] {
+    font-size: $titleFontSize;
+}
+
 .sidenav {
     background-color: white;
     height: 100%;
@@ -153,9 +161,7 @@ body {
     }
 }
 
-$leftBlockWidth: 37%;
-$leftContentWidth: 320px;
-$titleFontSize: 2.4em;
+
 
 @mixin leftBlock {
     position: relative;
@@ -205,7 +211,6 @@ $titleFontSize: 2.4em;
             float: right;
             .wrapper {
                 .hero-title {
-                    font-size: $titleFontSize;
                     margin: 0 0 30px 0;
                 }
                 .hero-description {
@@ -226,7 +231,7 @@ $titleFontSize: 2.4em;
             flex-direction: row;
         }
         
-        .heading {
+        .practice-title {
             @include leftBlock;
             background-color: rgba(234, 244, 246, 1);
             padding: 40px 0;
@@ -242,7 +247,6 @@ $titleFontSize: 2.4em;
                     margin-left: 5%;
                 }
                 span {
-                    font-size: $titleFontSize;
                     display: inline-block;
                     margin: 0;
                     &:last-child {
@@ -287,6 +291,27 @@ $titleFontSize: 2.4em;
                     width: 40%;
                 }
             }
+        }
+    }
+}
+
+#vision {
+    background-color: rgb(0, 48, 91);
+    .wrapper {
+        color: white;
+        padding: 40px 25px;
+        text-align: center;
+        .vision-title {
+            margin-bottom: 40px;
+        }
+        @media screen and (min-width: $md) {
+            padding: 90px 25px;
+            .vision-title {
+                margin-bottom: 90px;
+            }
+        }
+        .text {
+            line-height: 1.5em;
         }
     }
 }
