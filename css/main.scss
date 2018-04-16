@@ -186,19 +186,23 @@ $titleFontSize: 2.4em;
     }
 }
 
+@mixin parallax {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 1px;
+    margin-top: 1px;
+    @media screen and (min-width: $md) {
+        background-attachment: fixed;
+        height: 850px;
+    }
+}
+
 #hero1 {
     .container {
-        background-attachment: fixed;
         background-image: url('../img/hero1img.webp');
         height: 400px;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        padding-top: 1px;
-        margin-top: 1px;
-        @media screen and (min-width: $md) {
-            height: 850px;
-        }
+        @include parallax;
         .shadow {
             @include leftBlock;
             @media screen and (min-width: $sm) {
@@ -211,6 +215,7 @@ $titleFontSize: 2.4em;
             top: 18%;
             float: right;
             .wrapper {
+                margin-right: 15px;
                 .hero-title {
                     margin: 0 0 30px 0;
                 }
@@ -318,13 +323,7 @@ $titleFontSize: 2.4em;
 }
 
 #team {
-    background-attachment: fixed;
+    @include parallax;
     background-image: url(../img/hero2img.webp);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 600px;
-    @media screen and (min-width: $md) {
-        height: 850px;
-    }
+    height: 400px;
 }
