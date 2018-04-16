@@ -349,7 +349,54 @@ $titleFontSizeMd: 2.4em;
             white-space: nowrap;
         }
         .card-wrapper {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            @media screen and (min-width: $sm) {
+                flex-direction: row;
+            }
             .card {
+                margin-bottom: 45px;
+                width: 70%;
+                @media screen and (min-width: $xs) {
+                    width: 60%;
+                }
+                @media screen and (min-width: $sm) {
+                    margin-bottom: 0;
+                    max-width: 33%;
+                }
+                @media screen and (min-width: $md) {
+                    max-width: 28%;
+                }
+                * {
+                    margin-bottom: 10px;
+                }
+                img {
+                    width: 100%;
+                    @media screen and (min-width: $sm) {
+                        width: 70%;
+                    }
+                }
+                hr {
+                    margin: 15px 0;
+                }
+                .name {
+                    color: #00305B;
+                    font-size: 1.3em;
+                }
+                .position {
+                    color: #377DBD;
+                }
+                .contacts {
+                    a {
+                        display: block;
+                        color: #00305B;
+                        margin-bottom: 0;
+                        text-decoration: none;
+                        text-transform: none;
+                    }
+                }
                 
             }
         }
