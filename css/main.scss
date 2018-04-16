@@ -27,10 +27,21 @@ body {
 
 $leftBlockWidth: 37%;
 $leftContentWidth: 320px;
-$titleFontSize: 2.4em;
+$titleFontSizeXs: 1.8em;
+$titleFontSizeSm: 2em;
+$titleFontSizeMd: 2.4em;
 
 *[class$="-title"] {
-    font-size: $titleFontSize;
+    font-size: $titleFontSizeXs;
+    @media screen and (min-width: $xs) {
+        font-size: $titleFontSizeXs
+    }
+    @media screen and (min-width: $sm) {
+        font-size: $titleFontSizeSm
+    }
+    @media screen and (min-width: $md) {
+        font-size: $titleFontSizeMd
+    }
 }
 
 .sidenav {
@@ -198,11 +209,25 @@ $titleFontSize: 2.4em;
     }
 }
 
+@mixin heading {
+        padding: 60px 25px;
+        text-transform: uppercase;
+        *[class$="-title"] {
+            margin-bottom: 40px;
+        }
+        @media screen and (min-width: $md) {
+            padding: 90px 25px;
+            *[class$="-title"] {
+                margin-bottom: 90px;
+            }
+        }
+}
+
 #hero1 {
     .container {
+        @include parallax;
         background-image: url('../img/hero1img.webp');
         height: 400px;
-        @include parallax;
         .shadow {
             @include leftBlock;
             @media screen and (min-width: $sm) {
@@ -215,13 +240,14 @@ $titleFontSize: 2.4em;
             top: 18%;
             float: right;
             .wrapper {
-                margin-right: 15px;
+                @include heading;
                 .hero-title {
-                    margin: 0 0 30px 0;
+                    margin-bottom: 30px;
                 }
                 .hero-description {
                     font-size: 18px;
                     margin: 0 10px 0 0;
+                    text-transform: none;
                 }
             }
         }
@@ -239,9 +265,9 @@ $titleFontSize: 2.4em;
         
         .practice-title {
             @include leftBlock;
+            @include heading;
             background-color: rgba(234, 244, 246, 1);
-            padding: 40px 0;
-            text-transform: uppercase;
+            padding: 0 25px;
             @media screen and (min-width: $sm) {
                 width: $leftBlockWidth;
                 justify-content: center;
@@ -251,13 +277,6 @@ $titleFontSize: 2.4em;
                 margin-left: 10%;
                 @media screen and (min-width: $sm) {
                     margin-left: 5%;
-                }
-                span {
-                    display: inline-block;
-                    margin: 0;
-                    &:last-child {
-                        font-weight: 400;
-                    }    
                 }
             }
         }
@@ -304,20 +323,12 @@ $titleFontSize: 2.4em;
 #vision {
     background-color: rgb(0, 48, 91);
     .wrapper {
+        @include heading;
         color: white;
-        padding: 40px 25px;
         text-align: center;
-        .vision-title {
-            margin-bottom: 40px;
-        }
-        @media screen and (min-width: $md) {
-            padding: 90px 25px;
-            .vision-title {
-                margin-bottom: 90px;
-            }
-        }
         .text {
             line-height: 1.5em;
+            text-transform: none;
         }
     }
 }
@@ -326,4 +337,21 @@ $titleFontSize: 2.4em;
     @include parallax;
     background-image: url(../img/hero2img.webp);
     height: 400px;
+}
+
+#attorneys {
+    background-color: rgba(234, 244, 246, 1);
+    .wrapper {
+        @include heading;
+        text-align: center;
+        .attorneys-title {
+            color: #00305B;
+            white-space: nowrap;
+        }
+        .card-wrapper {
+            .card {
+                
+            }
+        }
+    }   
 }
