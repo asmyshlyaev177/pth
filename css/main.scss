@@ -196,6 +196,13 @@ $titleFontSizeMd: 2.4em;
         width: $leftContentWidth;
     }
 }
+    
+@mixin link {
+    color: #00305B;
+    margin-bottom: 0;
+    text-decoration: none;
+    text-transform: none;
+}
 
 @mixin parallax {
     background-repeat: no-repeat;
@@ -337,6 +344,9 @@ $titleFontSizeMd: 2.4em;
     @include parallax;
     background-image: url(../img/hero2img.webp);
     height: 400px;
+    @media screen and (min-width: $md) {
+        height: 650px;
+    }
 }
 
 #attorneys {
@@ -390,15 +400,55 @@ $titleFontSizeMd: 2.4em;
                 }
                 .contacts {
                     a {
+                        @include link;
                         display: block;
-                        color: #00305B;
-                        margin-bottom: 0;
-                        text-decoration: none;
-                        text-transform: none;
                     }
                 }
                 
             }
         }
     }   
+}
+
+#contact {
+    @include parallax;
+    background-image: url('../img/hero3img.webp');
+    .container {
+        background-color: rgba(0, 78, 148, 0.75);
+        display: flex;
+        flex-direction: column;
+        & > * {
+            margin: 30px 15px;
+        }
+        .shadow {
+            @include leftBlock;
+            @media screen and (min-width: $sm) {
+                height: 100%;
+            }
+            background-color: rgba(0, 48, 91, 0.65);
+            color: white;
+            margin: 0;
+            width: 100%;
+            .wrapper {
+                @include heading;
+                padding: 0;
+                .contact-title {
+                    margin: 25px 5px;
+                }
+            }
+        }
+        .info {
+            color: white;
+            margin-left: 5%;
+            a {
+                @include link;
+                color: white;
+            }
+            .address {
+                .find {
+                    margin: 30px 0;
+                }
+            }
+        }
+    }
 }
