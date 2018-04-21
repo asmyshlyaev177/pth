@@ -196,60 +196,63 @@
                     </div>
                 </div>
             </div>
-            <div class="info">
-                <div class="address-title">
-                    <span class="bold">Our </span>
-                    <span>Address</span>
-                </div>
-                <div class="address">
-                    <p>500 Terry Francois St. San Francisco, CA 94158</p>
-                    <div class="email-tel block">
-                        <div class="block email">
-                            <span class="bold">Email: </span><a href="mailto:info@mysite.com">info@mysite.com</a>
+            <div class="info-wrapper">
+                <div class="info">
+                    <div class="address-title">
+                        <span class="bold">Our </span>
+                        <span>Address</span>
+                    </div>
+                    <div class="address">
+                        <p>500 Terry Francois St. San Francisco, CA 94158</p>
+                        <div class="email-tel block">
+                            <div class="block email">
+                                <span class="bold">Email: </span><a href="mailto:info@mysite.com">info@mysite.com</a>
+                            </div>
+                            <div class="block tel">
+                                <span class="bold">Tel: </span><a href="tel:1234567890">Tel: 123-456-7890</a>
+                            </div>
                         </div>
-                        <div class="block tel">
-                            <span class="bold">Tel: </span><a href="tel:1234567890">Tel: 123-456-7890</a>
+                        <div class="find">
+                            <a href="#">Click Here to Find Us</a>
                         </div>
                     </div>
-                    <div class="find">
-                        <a href="#">Click Here to Find Us</a>
+                    <div class="form-heading">
+                        For any general inquiries, please fill in the following contact form:
                     </div>
                 </div>
-                <div class="form-heading">
-                    For any general inquiries, please fill in the following contact form:
+                <div class="form">
+                    <form onsubmit="sendForm(myname.value, email.value, subject.value, message.value); return false;">
+                        <div class="wrapper">
+                            <div class="col">
+                                <input type="text" name="myname"
+                                       required placeholder="Name *"
+                                       class="field" id="nameField"
+                                       spellcheck="false"
+                                       onclick="handleFocus(id)"
+                                       oninput="handleFocus(id)"
+                                       oninvalid="handleInvalid(id)">
+                                <input type="email" name="email"
+                                       required placeholder="Email *"
+                                       class="field" id="emailField"
+                                       spellcheck="false"
+                                       onclick="handleFocus(id)"
+                                       oninput="handleFocus(id)"
+                                       oninvalid="handleInvalid(id)">
+                                <input type="text" name="subject" placeholder="Subject" class="field">
+                            </div>
+                            <div class="col">
+                                <textarea name="message" placeholder="Message" class="field message" default-value=""></textarea>
+                            </div>
+                            <div class="btn">
+                                <input class="send-btn" type="submit" value="Send"></div>
+                        </div>
+                    </form>
                 </div>
             </div>
-            
-            <div class="form">
-                <form onsubmit="sendForm(myname.value, email.value, subject.value, message.value); return false;">
-                    <div class="wrapper">
-                        <div class="col">
-                            <input type="text" name="myname"
-                                   required placeholder="Name *"
-                                   class="field" id="nameField"
-                                   spellcheck="false"
-                                   onclick="handleFocus(id)"
-                                   oninput="handleFocus(id)"
-                                   oninvalid="handleInvalid(id)">
-                            <input type="email" name="email"
-                                   required placeholder="Email *"
-                                   class="field" id="emailField"
-                                   spellcheck="false"
-                                   onclick="handleFocus(id)"
-                                   oninput="handleFocus(id)"
-                                   oninvalid="handleInvalid(id)">
-                            <input type="text" name="subject" placeholder="Subject" class="field">
-                        </div>
-                        <div class="col">
-                            <textarea name="message" placeholder="Message" class="field message" default-value=""></textarea>
-                        </div>
-                    </div>
-                    <input class="send-btn" type="submit" value="Send">
-                </form>
-            </div>
-            <div class="back-to-top">
 
-            </div>
+        </div>
+        <div class="back-to-top">
+
         </div>
     </section>
     

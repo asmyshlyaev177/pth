@@ -44,6 +44,62 @@ $titleFontSizeMd: 2.4em;
     }
 }
 
+@mixin leftBlock {
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-content: center;
+    @media screen and (min-width: $xs) {
+        align-items: center;
+    }
+    @media screen and (min-width: $sm) {
+        float: left;
+        top: 0;
+        width: $leftBlockWidth;
+        justify-content: center;
+    }
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 5%;
+        width: $leftContentWidth;
+    }
+}
+    
+@mixin link {
+    color: #00305B;
+    margin-bottom: 0;
+    text-decoration: none;
+    text-transform: none;
+}
+
+@mixin parallax {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 1px;
+    margin-top: 1px;
+    @media screen and (min-width: $md) {
+        background-attachment: fixed;
+        height: 850px;
+    }
+}
+
+@mixin heading {
+        padding: 60px 25px;
+        text-transform: uppercase;
+        *[class$="-title"] {
+            margin-bottom: 40px;
+        }
+        @media screen and (min-width: $md) {
+            padding: 90px 25px;
+            *[class$="-title"] {
+                margin-bottom: 90px;
+            }
+        }
+}
+
 .sidenav {
     background-color: white;
     height: 100%;
@@ -170,64 +226,6 @@ $titleFontSizeMd: 2.4em;
             }
         }
     }
-}
-
-
-
-@mixin leftBlock {
-    position: relative;
-    display: flex;
-    justify-content: left;
-    align-content: center;
-    @media screen and (min-width: $xs) {
-        align-items: center;
-    }
-    @media screen and (min-width: $sm) {
-        float: left;
-        top: 0;
-        width: $leftBlockWidth;
-        justify-content: center;
-    }
-    .wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-left: 5%;
-        width: $leftContentWidth;
-    }
-}
-    
-@mixin link {
-    color: #00305B;
-    margin-bottom: 0;
-    text-decoration: none;
-    text-transform: none;
-}
-
-@mixin parallax {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    padding-top: 1px;
-    margin-top: 1px;
-    @media screen and (min-width: $md) {
-        background-attachment: fixed;
-        height: 850px;
-    }
-}
-
-@mixin heading {
-        padding: 60px 25px;
-        text-transform: uppercase;
-        *[class$="-title"] {
-            margin-bottom: 40px;
-        }
-        @media screen and (min-width: $md) {
-            padding: 90px 25px;
-            *[class$="-title"] {
-                margin-bottom: 90px;
-            }
-        }
 }
 
 #hero1 {
@@ -416,14 +414,28 @@ $titleFontSizeMd: 2.4em;
     .container {
         background-color: rgba(0, 78, 148, 0.75);
         display: flex;
+        flex-wrap: wrap;
         flex-direction: column;
         & > * {
             margin: 30px 15px;
         }
+        @media screen and (min-width: $sm) {
+            flex-direction: row;
+            ustify-content: start;
+            flex-wrap: nowrap;
+            height: 850px;
+        }
         .shadow {
             @include leftBlock;
-            @media screen and (min-width: $sm) {
+            @media screen and (max-width: $xs) {
                 height: 100%;
+                width: 100%;
+            }
+            @media screen and (min-width: $sm) {
+                float: left;
+                top: 0;
+                width: $leftBlockWidth;
+                justify-content: center;
             }
             background-color: rgba(0, 48, 91, 0.65);
             color: white;
@@ -437,67 +449,101 @@ $titleFontSizeMd: 2.4em;
                 }
             }
         }
-        .info {
-            color: white;
-            line-height: 15px;
-            margin-bottom: 20px;
-            margin-left: 5%;
-            .address-title {
-                text-transform: uppercase;
-            }
-            a {
-                @include link;
+        .info-wrapper {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 2;
+            justify-content: center;
+            .info {
                 color: white;
+                line-height: 15px;
+                margin-bottom: 20px;
+                margin-left: 5%;
+                @media screen and (min-width) {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+                .address-title {
+                    text-transform: uppercase;
+                }
+                a {
+                    @include link;
+                    color: white;
+                }
+                .address {
+                    p {
+                        margin-bottom: 5px;
+                    }
+                    .email-tel div {
+                        margin-bottom: 5px;
+                    }
+                    .find {
+                        margin: 30px 0;
+                        a {
+                            color: #90D1D8;
+                        }
+                    }
+                }
             }
-            .address {
-                p {
-                    margin-bottom: 5px;
-                }
-                .email-tel div {
-                    margin-bottom: 5px;
-                }
-                .find {
-                    margin: 30px 0;
-                    a {
-                        color: #90D1D8;
+            .form {
+                color: white;
+                margin: 0 2% 25px 5%;
+                .wrapper {
+                    & .col:last-child {
+                        width: 100%;
+                    }
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    .field {
+                        border: 0px;
+                        color: #555555;
+                        font-size: 1.2em;
+                        height: 35px;
+                        line-height: 1.1em;
+                        margin: 7px 0;
+                        outline: 0;
+                        text-indent: 3px;
+                        width: 100%;
+                        &.invalid {
+                            border: 1px red solid;
+                            color: red;
+                        }
+                        &.message {
+                            height: 140px;
+                            margin-bottom: 3px;
+                            resize: none;
+                        }
+                    }
+                    @media screen and (min-width: $sm) {
+                        justify-content: space-around;
+                        flex-direction: row;
+                        &.col {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            flex-basis: 48%;
+                            margin: 5px 3px;
+                            .message {
+                                margin: 0;
+                            }
+                        }
+                    }
+                    .btn {
+                        width: 100%;                    .send-btn {
+                            background-color: rgba(65, 183, 196, 1);
+                            border: 0;
+                            color: white;
+                            cursor: pointer;
+                            float: right;
+                            margin-right: 0;
+                            padding: 5px 4px;
+                            text-transform: uppercase;
+                            }
+                        }
                     }
                 }
             }
         }
-        .form {
-            color: white;
-            margin: 0 2% 25px 5%;
-            .field {
-
-                border: 0px;
-                color: #555555;
-                font-size: 1.2em;
-                height: 35px;
-                line-height: 1.1em;
-                margin: 7px 0;
-                outline: 0;
-                text-indent: 3px;
-                width: 100%;
-                &.invalid {
-                    border: 1px red solid;
-                    color: red;
-                }
-                &.message {
-                    height: 140px;
-                    margin-bottom: 3px;
-                    resize: none;
-                }
-            }
-            .send-btn {
-                background-color: rgba(65, 183, 196, 1);
-                border: 0;
-                color: white;
-                cursor: pointer;
-                float: right;
-                padding: 5px 4px;
-                text-transform: uppercase;
-                
-            }
-        }
-    }
 }
