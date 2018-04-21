@@ -439,15 +439,64 @@ $titleFontSizeMd: 2.4em;
         }
         .info {
             color: white;
+            line-height: 15px;
+            margin-bottom: 20px;
             margin-left: 5%;
+            .address-title {
+                text-transform: uppercase;
+            }
             a {
                 @include link;
                 color: white;
             }
             .address {
+                p {
+                    margin-bottom: 5px;
+                }
+                .email-tel div {
+                    margin-bottom: 5px;
+                }
                 .find {
                     margin: 30px 0;
+                    a {
+                        color: #90D1D8;
+                    }
                 }
+            }
+        }
+        .form {
+            color: white;
+            margin: 0 2% 25px 5%;
+            .field {
+
+                border: 0px;
+                color: #555555;
+                font-size: 1.2em;
+                height: 35px;
+                line-height: 1.1em;
+                margin: 7px 0;
+                outline: 0;
+                text-indent: 3px;
+                width: 100%;
+                &.invalid {
+                    border: 1px red solid;
+                    color: red;
+                }
+                &.message {
+                    height: 140px;
+                    margin-bottom: 3px;
+                    resize: none;
+                }
+            }
+            .send-btn {
+                background-color: rgba(65, 183, 196, 1);
+                border: 0;
+                color: white;
+                cursor: pointer;
+                float: right;
+                padding: 5px 4px;
+                text-transform: uppercase;
+                
             }
         }
     }

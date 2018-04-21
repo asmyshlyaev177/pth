@@ -215,7 +215,40 @@
                         <a href="#">Click Here to Find Us</a>
                     </div>
                 </div>
-                
+                <div class="form-heading">
+                    For any general inquiries, please fill in the following contact form:
+                </div>
+            </div>
+            
+            <div class="form">
+                <form onsubmit="sendForm(myname.value, email.value, subject.value, message.value); return false;">
+                    <div class="wrapper">
+                        <div class="col">
+                            <input type="text" name="myname"
+                                   required placeholder="Name *"
+                                   class="field" id="nameField"
+                                   spellcheck="false"
+                                   onclick="handleFocus(id)"
+                                   oninput="handleFocus(id)"
+                                   oninvalid="handleInvalid(id)">
+                            <input type="email" name="email"
+                                   required placeholder="Email *"
+                                   class="field" id="emailField"
+                                   spellcheck="false"
+                                   onclick="handleFocus(id)"
+                                   oninput="handleFocus(id)"
+                                   oninvalid="handleInvalid(id)">
+                            <input type="text" name="subject" placeholder="Subject" class="field">
+                        </div>
+                        <div class="col">
+                            <textarea name="message" placeholder="Message" class="field message" default-value=""></textarea>
+                        </div>
+                    </div>
+                    <input class="send-btn" type="submit" value="Send">
+                </form>
+            </div>
+            <div class="back-to-top">
+
             </div>
         </div>
     </section>
@@ -235,6 +268,20 @@
         function closeMenu() {
             document.getElementById("mySidenav").classList.remove('active');
             document.querySelector(".menu-icon .wrapper").classList.remove('active')
+        }
+        function handleFocus(id) {
+            var elem = document.querySelector('#' + id)
+            elem.classList.remove('invalid')
+        }
+        function handleInvalid(id) {
+            var elem = document.querySelector('#' + id)
+            if (!elem.validity.valid) setTimeout(() => elem.classList.add('invalid'), 0)
+        }
+        function sendForm(name, email, subject, message) {
+            console.log('Name ' + name)
+            console.log('Email ' + email)
+            console.log('Subject ' + subject)
+            console.log('Message ' + message)
         }
     </script>
     <!-- <script src="js/main.js"></script> -->
