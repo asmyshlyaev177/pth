@@ -427,16 +427,6 @@ $titleFontSizeMd: 2.4em;
         }
         .shadow {
             @include leftBlock;
-            @media screen and (max-width: $xs) {
-                height: 100%;
-                width: 100%;
-            }
-            @media screen and (min-width: $sm) {
-                float: left;
-                top: 0;
-                width: $leftBlockWidth;
-                justify-content: center;
-            }
             background-color: rgba(0, 48, 91, 0.65);
             color: white;
             margin: 0;
@@ -448,20 +438,44 @@ $titleFontSizeMd: 2.4em;
                     margin: 25px 5px;
                 }
             }
+            @media screen and (max-width: $xs) {
+                height: 100%;
+                width: 100%;
+            }
+            @media screen and (min-width: $sm) {
+                float: left;
+                top: 0;
+                width: $leftBlockWidth;
+                justify-content: center;
+                & .wrapper {
+                    align-self: flex-start;
+                    margin-top: 100px;
+                }
+            }
+
         }
         .info-wrapper {
             display: flex;
             flex-direction: column;
             flex-grow: 2;
             justify-content: center;
+            @media screen and (min-width: $sm) {
+                justify-content: flex-start;
+                margin-left: 0;
+                & .info {
+                    margin-top: 100px;
+                }
+            }
+            @media screen and (min-width: $md) {
+                & .info {
+                    margin-top: 190px;
+                }
+            }
             .info {
                 color: white;
                 line-height: 15px;
                 margin-bottom: 20px;
-                margin-left: 5%;
-                @media screen and (min-width: $sm) {
-                    margin-left: 0;
-                }
+                margin-left: 3%;
                 .address-title {
                     text-transform: uppercase;
                 }
@@ -520,16 +534,14 @@ $titleFontSizeMd: 2.4em;
                             justify-content: space-between;;
                             width: auto;
                         }
-                        @media screen and (min-width: $md) {
-                            margin: 0;
-                        }
                     }
                     @media screen and (min-width: $sm) {
-                        justify-content: space-between;;
+                        margin: 0 0 0 3%;
+                        justify-content: space-between;
                         & .col {
                             display: flex;
                             flex-direction: column;
-                            justify-content: space-between;
+                            justify-content: space-around;
                             flex-basis: calc(50% - 3px);
                             margin: 5px 0;
                             .message {
@@ -539,19 +551,32 @@ $titleFontSizeMd: 2.4em;
                     }
                     @media screen and (min-width: $md) {
                         flex-direction: row;
+                        flex-wrap: nowrap;
                     }
-                    .btn {
-                        width: 100%;                    
-                        .send-btn {
-                            background-color: rgba(65, 183, 196, 1);
-                            border: 0;
-                            color: white;
-                            cursor: pointer;
-                            float: right;
-                            margin-right: 0;
-                            padding: 5px 4px;
-                            text-transform: uppercase;
+                    @media screen and (min-width: $lg)  {
+                        justify-content: start;
+                        width: 80%;
+                        & .col {
+                            margin: 5px 3px;
+                            .message {
+                                margin: 0;
                             }
+                        }
+                    }  
+                }
+                .send-btn {
+                    width: 53px;                    
+                    background-color: rgba(65, 183, 196, 1);
+                    border: 0;
+                    color: white;
+                    cursor: pointer;
+                    float: right;
+                    margin-right: 0;
+                    padding: 5px 4px;
+                    text-transform: uppercase;
+                    @media screen and (min-width: $lg)  {
+                        float: none;
+                        margin-left: calc(83% - 56px);
                     }
                 }
             }
