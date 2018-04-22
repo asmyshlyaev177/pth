@@ -12,9 +12,9 @@ gulp.task('watch', function() {
     .pipe(watch('./css/**/*.scss'))
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compressed'}))
-    // .on('error', swallowError)
     .pipe(autoprefixer("last 5 version", "> 2%"))
     .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('dist'))
     .pipe(gulp.dest('./css'));
 });
 
