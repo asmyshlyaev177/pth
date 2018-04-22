@@ -231,7 +231,7 @@ $titleFontSizeMd: 2.4em;
 #hero1 {
     .container {
         @include parallax;
-        background-image: url('../img/hero1img.webp');
+        background-image: url('../img/hero1img.jpg');
         height: 400px;
         .shadow {
             @include leftBlock;
@@ -340,7 +340,7 @@ $titleFontSizeMd: 2.4em;
 
 #team {
     @include parallax;
-    background-image: url(../img/hero2img.webp);
+    background-image: url('../img/hero2img.jpg');
     height: 400px;
     @media screen and (min-width: $md) {
         height: 650px;
@@ -410,7 +410,7 @@ $titleFontSizeMd: 2.4em;
 
 #contact {
     @include parallax;
-    background-image: url('../img/hero3img.webp');
+    background-image: url('../img/hero3img.jpg');
     .container {
         background-color: rgba(0, 78, 148, 0.75);
         display: flex;
