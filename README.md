@@ -1,3 +1,3 @@
 # pth
 
-Практика в вёрстке.
+HTML/CSS exersice.
